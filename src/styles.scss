@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "flat-colors";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: $flat-midnight-blue;
+    overflow: hidden;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+	width: 100vw;
+    height: 100vh;
+}
