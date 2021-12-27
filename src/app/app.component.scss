@@ -15,36 +15,103 @@
     border: 0.3em solid $flat-carrot;
 }
 
+.planet {
+    transform: translateY(-50%);
+    display: block;
+    position: absolute;
+}
+
 #mercury-planet {
     width: 1.5em;
     height: 1.5em;
     background-color: $flat-asbestos;
-    transform: translateY(-50%);
-    display: block;
-    position: absolute;
-    top: 3em;
+    top: 3.6em;
 }
 
 #venus-planet {
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     background-color: $flat-pumpkin;
-    transform: translateY(-50%);
-    display: block;
-    position: absolute;
-    top: 4.3em;
+    top: 5.8em;
 }
+
+#earth-planet {
+    width: 2.3em;
+    height: 2.3em;
+    background-color: $flat-peter-river;
+    border: 0.3em solid $flat-emerald;
+    top: 8.2em;
+}
+
+#mars-planet {
+    width: 1.2em;
+    height: 1.2em;
+    background-color: $flat-pomegranate;
+    top: 12.5em;
+}
+
+#jupiter-planet {
+    width: 3em;
+    height: 3em;
+    background-color: $flat-pumpkin;
+    top: 13.3em;
+}
+
+#saturn-planet {
+    width: 3em;
+    height: 3em;
+    background-color: $flat-carrot;
+    top: 32.5em;
+}
+
+#uranus-planet {
+    width: 2.8em;
+    height: 2.8em;
+    background-color: $flat-wisteria;
+    top: 19em;
+}
+
+#neptune-planet {
+    width: 2.8em;
+    height: 2.8em;
+    background-color: $flat-belize-hole;
+    top: 41em;
+}
+
 
 #mercury-orbit {
     animation-duration: 1s;
-}
+  }
 
-#venus-orbit {
-    animation-duration: 3s;
-}
+  #venus-orbit {
+    animation-duration: 2.6s;
+  }
+
+  #earth-orbit {
+    animation-duration: 4.1s;
+  }
+
+  #mars-orbit {
+    animation-duration: 7.8s;
+  }
+
+  #jupiter-orbit {
+    animation-duration: 49.8s;
+  }
+
+  #saturn-orbit {
+    animation-duration: 120.3s;
+  }
+
+  #uranus-orbit {
+    animation-duration: 348.4s;
+  }
+
+  #neptune-orbit {
+    animation-duration: 684.4s;
+  }
 
 .universe {
-    // background-color: aqua;
     position: relative;
     width: 100%;
     max-width: 700px;
@@ -56,19 +123,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    // animation: spin infinite linear both;
+    animation: spin infinite linear both;
     background-color: transparent;
     border: 0.1em solid $flat-gray-1;
 
     @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
-            width: calc(#{$i} * 6em);
-            height: calc(#{$i} * 6em);
+            width: calc(#{$i} * 7em);
+            height: calc(#{$i} * 7em);
         }
     }
-    // &:nth-child(1) {
-    //     display: none;
-    // }
 }
 
 @keyframes spin {
