@@ -1,146 +1,136 @@
 @import "../flat-colors";
 
 .sphere {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
-#sun {
-    width: 4em;
-    height: 4em;
-    background-color: $flat-sunflower;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 0.3em solid $flat-carrot;
+.universe {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  padding-top: 100%;
+}
+.orbit {
+  position: fixed;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin infinite linear both;
+  background-color: transparent;
+  border: 0.1vw solid $flat-gray-1;
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      width: calc(#{$i} * 4.5vw);
+      height: calc(#{$i} * 4.5vw);
+    }
+  }
 }
 
 .planet {
-    transform: translateY(-50%);
-    display: block;
-    position: absolute;
+  width: 1.8vw;
+  height: 1.8vw;
+  transform: translateY(50%);
+  display: block;
+  position: absolute;
+}
+
+#sun {
+  width: 3vw;
+  height: 3vw;
+  background-color: $flat-sunflower;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.2vw solid $flat-carrot;
 }
 
 #mercury-planet {
-    width: 1.5em;
-    height: 1.5em;
-    background-color: $flat-asbestos;
-    top: 3.6em;
+  background-color: $flat-concrete;
 }
 
 #venus-planet {
-    width: 2em;
-    height: 2em;
-    background-color: $flat-pumpkin;
-    top: 5.8em;
+  background-color: $flat-pumpkin;
+  top: 0.3vw;
+  left: 10.8vw;
 }
 
 #earth-planet {
-    width: 2.3em;
-    height: 2.3em;
-    background-color: $flat-peter-river;
-    border: 0.3em solid $flat-emerald;
-    top: 8.2em;
+  background-color: $flat-peter-river;
+  border: 0.2vw solid $flat-emerald;
+  top: 2vw;
+  left: 0.5vw;
 }
 
 #mars-planet {
-    width: 1.2em;
-    height: 1.2em;
-    background-color: $flat-pomegranate;
-    top: 12.5em;
+  background-color: $flat-pomegranate;
+  top: -1.8vw;
+  left: 10vw;
 }
 
 #jupiter-planet {
-    width: 3em;
-    height: 3em;
-    background-color: $flat-pumpkin;
-    top: 13.3em;
+  background-color: $flat-pumpkin;
+  top: 1vw;
+  left: 4.2vw;
 }
 
 #saturn-planet {
-    width: 3em;
-    height: 3em;
-    background-color: $flat-carrot;
-    top: 32.5em;
+  background-color: $flat-carrot;
+  top: -1vw;
+  left: 10vw;
 }
 
 #uranus-planet {
-    width: 2.8em;
-    height: 2.8em;
-    background-color: $flat-wisteria;
-    top: 19em;
+  background-color: $flat-wisteria;
+  top: 28.5vw;
+  left: 4vw;
 }
 
 #neptune-planet {
-    width: 2.8em;
-    height: 2.8em;
-    background-color: $flat-belize-hole;
-    top: 41em;
+  background-color: $flat-belize-hole;
+  top: 12vw;
 }
-
 
 #mercury-orbit {
-    animation-duration: 1s;
-  }
-
-  #venus-orbit {
-    animation-duration: 2.6s;
-  }
-
-  #earth-orbit {
-    animation-duration: 4.1s;
-  }
-
-  #mars-orbit {
-    animation-duration: 7.8s;
-  }
-
-  #jupiter-orbit {
-    animation-duration: 49.8s;
-  }
-
-  #saturn-orbit {
-    animation-duration: 120.3s;
-  }
-
-  #uranus-orbit {
-    animation-duration: 348.4s;
-  }
-
-  #neptune-orbit {
-    animation-duration: 684.4s;
-  }
-
-.universe {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    padding-top: 100%;
+  animation-duration: 1s;
 }
-.orbit {
-    position: fixed;
-    display: block;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: spin infinite linear both;
-    background-color: transparent;
-    border: 0.1em solid $flat-gray-1;
 
-    @for $i from 1 through 10 {
-        &:nth-child(#{$i}) {
-            width: calc(#{$i} * 7em);
-            height: calc(#{$i} * 7em);
-        }
-    }
+#venus-orbit {
+  animation-duration: 2.6s;
+}
+
+#earth-orbit {
+  animation-duration: 4.1s;
+}
+
+#mars-orbit {
+  animation-duration: 7.8s;
+}
+
+#jupiter-orbit {
+  animation-duration: 49.8s;
+}
+
+#saturn-orbit {
+  animation-duration: 120.3s;
+}
+
+#uranus-orbit {
+  animation-duration: 348.4s;
+}
+
+#neptune-orbit {
+  animation-duration: 684.4s;
 }
 
 @keyframes spin {
-    from {
-      transform: translate(-50%, -50%);
-    }
-  
-    to {
-      transform: translate(-50%, -50%) rotate(-360deg);
-    }
+  from {
+    transform: translate(-50%, -50%);
   }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
