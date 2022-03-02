@@ -1,0 +1,16 @@
+@import '../../flat-colors';
+
+.wrapper {
+    background-color: $flat-peter-river !important;
+    color: $flat-sunflower;
+    overflow: hidden;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+	width: 100vw;
+    height: 100vh;
+}
+
+.row {
+    margin-bottom: 10vw;
+}
