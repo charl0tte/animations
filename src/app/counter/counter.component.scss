@@ -1,16 +1,13 @@
-@import '../../flat-colors';
+@use '../../flat-colors' as colors;
 
 .wrapper {
-    background-color: $flat-peter-river !important;
-    color: $flat-sunflower;
+    background-color: colors.$flat-wet-asphalt  !important;
+    color: colors.$flat-amethyst;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
 	justify-content: center;
     align-items: center;
 	width: 100vw;
     height: 100vh;
-}
-
-.row {
-    margin-bottom: 10vw;
 }
