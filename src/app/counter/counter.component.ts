@@ -30,7 +30,7 @@ export class CounterComponent implements OnInit {
 
       this.now = dayjs().format('YYYY-MM-DD HH:mm:ss')
       this.difference = theDate.diff(this.now);
-      this.days = dayjs.duration(this.difference).asDays().toFixed(0);
+      this.days = Math.floor(dayjs.duration(this.difference).asDays());
 
     }, 1000);
   }
