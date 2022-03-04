@@ -19,6 +19,8 @@ export class CounterComponent implements OnInit {
   interval: any;
   now: any;
   days: any;
+  backgroundColor: string = '$flat-wet-asphalt';
+  color: string = '$flat-amethyst';
 
   // .format('M DD HH:mm:ss')
 
