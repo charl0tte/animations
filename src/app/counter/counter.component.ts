@@ -21,8 +21,26 @@ export class CounterComponent implements OnInit {
   days: any;
   backgroundColor: string = '$flat-wet-asphalt';
   color: string = '$flat-amethyst';
-
-  // .format('M DD HH:mm:ss')
+  flatColors: string[] = ["#1ABC9C",
+    "#16A085",
+    "#2ECC71",
+    "#27AE60",
+    "#3498DB",
+    "#2980B9",
+    "#34495E",
+    "#2C3E50",
+    "#9B59B6",
+    "#8E44AD",
+    "#F1C40F",
+    "#F39C12",
+    "#E67E22",
+    "#D35400",
+    "#E74C3C",
+    "#C0392B",
+    "#ECF0F1",
+    "#BDC3C7",
+    "#95A5A6",
+    "#7F8C8D",]
 
   constructor() { }
 
@@ -33,7 +51,8 @@ export class CounterComponent implements OnInit {
       this.now = dayjs().format('YYYY-MM-DD HH:mm:ss')
       this.difference = theDate.diff(this.now);
       this.days = Math.floor(dayjs.duration(this.difference).asDays());
-
+      this.backgroundColor = this.flatColors[Math.floor(Math.random() * this.flatColors.length) + 1];
+      this.color = this.flatColors[Math.floor(Math.random() * this.flatColors.length) + 1];
     }, 1000);
   }
 

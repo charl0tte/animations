@@ -24,8 +24,8 @@ $colors:
 $repeat: 20;
 
 .wrapper {
-    background-color: nth($colors, random(length($colors)))  !important;
-    color: nth($colors, random(length($colors)));
+    // background-color: nth($colors, random(length($colors)))  !important;
+    // color: nth($colors, random(length($colors)));
     overflow: hidden;
     display: flex;
     flex-direction: column;
