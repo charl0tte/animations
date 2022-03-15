@@ -48,6 +48,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border: 0.2vw solid $flat-carrot;
+  z-index: 9999 !important;
 }
 
 #mercury-planet {
