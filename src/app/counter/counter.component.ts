@@ -7,13 +7,13 @@ import * as duration from 'dayjs/plugin/duration'
 import * as dayjsBusinessTime from 'dayjs-business-time';
 // const dayjsBusinessDays = require('dayjs-business-days').default
 
-const theDate = dayjs('2022-05-04 07:00:00');
+const theDate = dayjs('2022-06-01 00:00:00');
 
 dayjs.extend(relativeTime);
 dayjs.extend(duration);
 dayjs.extend(dayjsBusinessTime);
 
-dayjs.setHolidays(['2022-04-17', '2022-04-25', '2022-05-01', '2022-05-03'])
+dayjs.setHolidays(['2022-04-15', '2022-04-17', '2022-04-18', '2022-05-01', '2022-05-03'])
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
@@ -27,37 +27,67 @@ export class CounterComponent implements OnInit {
   days: any;
   cyrc: any;
   mayBusiness: any;
-  backgroundColor: string = '$flat-wet-asphalt';
-  color: string = '$flat-amethyst';
-  flatColors: string[] = [
-    "#16A085",
-    "#27AE60",
-    "#2980B9",
-    "#34495E",
-    "#2C3E50",
-    "#9B59B6",
-    "#8E44AD",
-    "#F1C40F",
-    "#E67E22",
-    "#C0392B",
-    "#95A5A6",
-    "#7F8C8D",]
+  backgroundColor: string = '#34495e';
+  color: string = '#7f8c8d';
+  index: number = 0;
+  flatColors: any[] = [
+    // { "primaryColor": "#1ABC9C", "secondaryColor": "#F39C12" },
+    // { "primaryColor": "#16A085", "secondaryColor": "#F1C40F" },
+    // { "primaryColor": "#2ECC71", "secondaryColor": "#E67E22" },
+    // { "primaryColor": "#27AE60", "secondaryColor": "#D35400" },
+
+    { "primaryColor": "#3498DB", "secondaryColor": "#F1C40F" },
+    // { "primaryColor": "#2980B9", "secondaryColor": "#E67E22" },
+    // { "primaryColor": "#34495E", "secondaryColor": "#E74C3C" },
+    // { "primaryColor": "#2C3E50", "secondaryColor": "#9B59B6" },
+
+    // { "primaryColor": "#9B59B6", "secondaryColor": "#F39C12" },
+    // { "primaryColor": "#8E44AD", "secondaryColor": "#BDC3C7" },
+
+    
+    // { "primaryColor": "#F39C12", "secondaryColor": "#C0392B" },
+    { "primaryColor": "#F1C40F", "secondaryColor": "#3498DB" },
+    // { "primaryColor": "#E67E22", "secondaryColor": "#8E44AD" },
+    // { "primaryColor": "#D35400", "secondaryColor": "#2C3E50" },
+
+    // { "primaryColor": "#E74C3C", "secondaryColor": "#3498DB" },
+    // { "primaryColor": "#C0392B", "secondaryColor": "#BDC3C7" },
+
+    // { "primaryColor": "#ECF0F1", "secondaryColor": "#27AE60" },
+    // { "primaryColor": "#BDC3C7", "secondaryColor": "#F39C12" },
+    // { "primaryColor": "#95A5A6", "secondaryColor": "#2980B9" },
+    // { "primaryColor": "#7F8C8D", "secondaryColor": "#F1C40F" },
+  ]
+
+  // backgroundColors: string[] = ['#16a085', '#27ae60', '#2980b9', '#8e44ad', '#2c3e50'];
 
   constructor() { }
 
   ngOnInit(): void {
 
     this.interval = setInterval(() => {
+
       this.now = dayjs().format('YYYY-MM-DD HH:mm:ss');
-      
       this.cyrc = dayjs(this.now).businessDaysDiff(dayjs(theDate));
       this.mayBusiness = dayjs('2022-05-01').businessDaysDiff(dayjs('2022-05-31'));
 
       this.difference = dayjs(theDate).diff(this.now);
       this.days = Math.floor(dayjs.duration(this.difference).asDays());
-      this.backgroundColor = this.flatColors[Math.floor(Math.random() * this.flatColors.length) + 1];
-      this.color = this.flatColors[Math.floor(Math.random() * this.flatColors.length) + 1];
+
+
+      this.backgroundColor = this.flatColors[this.index].primaryColor;
+      this.color = this.flatColors[this.index].secondaryColor;
+
+      if (this.index == this.flatColors.length - 1) {
+        this.index = -1;
+      }
+
+      this.index++;
+
     }, 1000);
+
+
+
   }
 
   ngOnDestroy(): void {
