@@ -13,7 +13,7 @@ dayjs.extend(relativeTime);
 dayjs.extend(duration);
 dayjs.extend(dayjsBusinessTime);
 
-dayjs.setHolidays(['2022-04-15', '2022-04-17', '2022-04-18', '2022-05-01', '2022-05-03'])
+dayjs.setHolidays(['2022-04-15', '2022-04-17', '2022-05-02', '2022-05-03'])
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
@@ -36,7 +36,7 @@ export class CounterComponent implements OnInit {
     // { "primaryColor": "#2ECC71", "secondaryColor": "#E67E22" },
     // { "primaryColor": "#27AE60", "secondaryColor": "#D35400" },
 
-    { "primaryColor": "#3498DB", "secondaryColor": "#F1C40F" },
+    { "primaryColor": "#2C3E50", "secondaryColor": "#F1C40F" },
     // { "primaryColor": "#2980B9", "secondaryColor": "#E67E22" },
     // { "primaryColor": "#34495E", "secondaryColor": "#E74C3C" },
     // { "primaryColor": "#2C3E50", "secondaryColor": "#9B59B6" },
@@ -46,7 +46,7 @@ export class CounterComponent implements OnInit {
 
     
     // { "primaryColor": "#F39C12", "secondaryColor": "#C0392B" },
-    { "primaryColor": "#F1C40F", "secondaryColor": "#3498DB" },
+    { "primaryColor": "#2C3E50", "secondaryColor": "#3498DB" },
     // { "primaryColor": "#E67E22", "secondaryColor": "#8E44AD" },
     // { "primaryColor": "#D35400", "secondaryColor": "#2C3E50" },
 
@@ -68,7 +68,7 @@ export class CounterComponent implements OnInit {
     this.interval = setInterval(() => {
 
       this.now = dayjs().format('YYYY-MM-DD HH:mm:ss');
-      this.cyrc = dayjs(this.now).businessDaysDiff(dayjs(theDate));
+      this.cyrc = dayjs(this.now).businessDaysDiff(dayjs('2022-05-09'));
       this.mayBusiness = dayjs('2022-05-01').businessDaysDiff(dayjs('2022-05-31'));
 
       this.difference = dayjs(theDate).diff(this.now);
