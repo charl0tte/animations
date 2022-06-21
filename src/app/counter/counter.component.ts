@@ -7,7 +7,7 @@ import * as duration from 'dayjs/plugin/duration'
 import * as dayjsBusinessTime from 'dayjs-business-time';
 // const dayjsBusinessDays = require('dayjs-business-days').default
 
-const theDate = dayjs('2022-06-01 00:00:00');
+const theDate = dayjs('2022-06-01 09:00:00');
 
 dayjs.extend(relativeTime);
 dayjs.extend(duration);
@@ -71,18 +71,20 @@ export class CounterComponent implements OnInit {
       this.cyrc = dayjs(this.now).businessDaysDiff(dayjs('2022-05-09'));
       this.mayBusiness = dayjs('2022-05-01').businessDaysDiff(dayjs('2022-05-31'));
 
-      this.difference = dayjs(theDate).diff(this.now);
-      this.days = Math.floor(dayjs.duration(this.difference).asDays());
-
-
+      // this.difference = dayjs(theDate).diff(this.now)
+      // this.days = Math.floor(dayjs.duration(this.difference).asDays());
+      
+      this.days = Math.abs(dayjs(this.now).businessDaysDiff(theDate))
+      this.difference = dayjs(this.now).diff(theDate)
+      
       this.backgroundColor = this.flatColors[this.index].primaryColor;
       this.color = this.flatColors[this.index].secondaryColor;
 
-      if (this.index == this.flatColors.length - 1) {
-        this.index = -1;
-      }
+      // if (this.index == this.flatColors.length - 1) {
+      //   this.index = -1;
+      // }
 
-      this.index++;
+      // this.index++;
 
     }, 1000);
 

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto Mono';
+    color: #222f3e;
+    // font-weight: bold;
+    // box-sizing: border-box;
+}
+
+.green {
+    background-color: #1dd1a1;
+}
+
+.custom-btn {
+    background: #fff;
+    border-radius: 100vw;
+    min-width: 8rem;
+    border: 0.1rem solid #222f3e;
+    box-shadow: 0.2rem 0.2rem 0 0.1rem #222f3e;
+}
+
+.custom-btn:hover {
+    background: #222f3e;
+    color: #fff;
+}
+
+.dark-border {
+    border: 0.1rem solid #222f3e;
+}
+
+.min-height-30 {
+    min-height: 30rem;
+}
+
+.white {
+    background: #fff
+}
+
+.no-left-border {
+    border-left: none;
+}
+
+.no-top-border {
+    border-top: none;
+}
+
+.purple {
+    background: #5f27cd;
+    color: #feca57;
+}
+
+.yellow {
+    background: #feca57;
+}
+
+.yellow:hover {
+    color: #feca57;
+}
