@@ -1,12 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 .container {
-    width: 100vw;
-    height: 100vh;
     font-family: 'Roboto Mono';
     color: #222f3e;
-    // font-weight: bold;
-    // box-sizing: border-box;
 }
 
 .green {
@@ -16,7 +12,7 @@
 .custom-btn {
     background: #fff;
     border-radius: 100vw;
-    min-width: 8rem;
+    min-width: 7rem;
     border: 0.1rem solid #222f3e;
     box-shadow: 0.2rem 0.2rem 0 0.1rem #222f3e;
 }
@@ -51,10 +47,56 @@
     color: #feca57;
 }
 
+.yellow-btn {
+    background: #feca57;
+}
+
+.yellow-btn:hover {
+    color: #feca57;
+}
+
+h1 {
+    font-weight: 600;
+}
+
 .yellow {
     background: #feca57;
 }
 
-.yellow:hover {
-    color: #feca57;
+.dashboard {
+    width: 35rem;
+    min-height: 25rem;
+    background: #fff;
+    border: 0.1rem solid #222f3e;
+    border-radius: 1rem;
+    box-shadow: 0.4rem 0.4rem 0 0.2rem #222f3e;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.item {
+    width: 4rem;
+    height: 4rem;
+    border: 0.1rem solid #222f3e;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0 0 #222f3e;
+}
+
+.pink {
+    background: #ff9ff3;
+}
+
+.red {
+    background: #ff6b6b;
+}
+
+.blue {
+    background: #48dbfb;
+}
+
+.dashed-border {
+    border: 0.15rem dashed #222f3e;
+    box-shadow: none;
 }
