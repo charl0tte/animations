@@ -100,3 +100,10 @@ h1 {
     border: 0.15rem dashed #222f3e;
     box-shadow: none;
 }
+
+.polygon {
+    width: 20rem;
+    height: 26rem;
+    // border: 0.1rem solid #222f3e;
+    clip-path: polygon(0% 0%, 25% 20%, 50% 0%, 75% 20%, 100% 0%, 100% 100%, 75% 80%, 50% 100%, 25% 80%, 0% 100%);
+}

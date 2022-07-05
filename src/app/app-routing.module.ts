@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path: '', loadChildren: () => import('./universe/universe.module').then(m => m.UniverseModule)},
   {path: 'counter', loadChildren: () => import('./counter/counter.module').then(m => m.CounterModule)},
-  {path: 'brutalism', loadChildren: () => import('./brutalism/brutalism.module').then(m => m.BrutalismModule)}
+  {path: 'brutalism', loadChildren: () => import('./brutalism/brutalism.module').then(m => m.BrutalismModule)},
+  {path: 'escalera', loadChildren: () => import('./escalera/escalera.module').then(m => m.EscaleraModule)},
 ];
 
 @NgModule({
